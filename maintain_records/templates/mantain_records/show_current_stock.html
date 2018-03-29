@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Current Stock</title>
+    
+    <style>
+        
+        #stock_table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+        }   
+
+        #stock_table td, #stock_table th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        
+        #stock_table tr:nth-child(even){background-color: #f2f2f2;}
+        
+        #stock_table tr:hover {background-color: #ddd;}
+        
+        #stock_table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+    </style>
+    
+</head>
+<body>
+
+<table id="stock_table" style="width:100%">
+  <tr>
+    <th>Item Name</th>
+    <th>Quantity</th>
+  </tr>
+
+  {% for item_name, quantity in data.items %}
+  <tr>
+    <td>{{item_name}}</td>
+    <td>{{quantity}}</td>
+
+  </tr>
+
+
+  {% endfor %}
+
+</table>
+
+
+</body>
+</html>
